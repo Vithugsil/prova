@@ -22,9 +22,9 @@ def setup_rabbitmq_consumer():
             events.append(message)
         
             redis_client.set('events', json.dumps(events))
-            print(f"Received message: {message}")
+            print(f"Mensagem recebida: {message}")
         except Exception as e:
-            print(f"Error processing message: {e}")
+            print(f"Erro: {e}")
 
     while True:
         try:
@@ -39,7 +39,7 @@ def setup_rabbitmq_consumer():
                 on_message_callback=callback,
                 auto_ack=True
             )
-            print("Started consuming messages from RabbitMQ")
+            print("Consumindo mensagens da fila 'logistics_queue'...")
             channel.start_consuming()
         except Exception as e:
             print(f"Connection error: {e}")
@@ -54,7 +54,7 @@ def receive_event():
         events.append(event_data)
     
         redis_client.set('events', json.dumps(events))
-        return jsonify({"message": "Event received successfully"}), 200
+        return jsonify({"message": "Evento recebido"}), 200
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 

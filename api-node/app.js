@@ -52,10 +52,10 @@ app.post("/alert", async (req, res) => {
     const pythonApiUrl = process.env.PYTHON_API_URL || "http://localhost:5000";
     await axios.post(`${pythonApiUrl}/event`, alertData);
 
-    res.json({ message: "Alert sent successfully" });
+    res.json({ message: "Alerta enviado!" });
   } catch (error) {
-    console.error("Error sending alert:", error);
-    res.status(500).json({ error: "Failed to send alert" });
+    console.error("Erro ao enviar alerta:", error);
+    res.status(500).json({ error: "Erro ao enviar alerta:" });
   }
 });
 
