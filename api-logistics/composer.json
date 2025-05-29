@@ -1,0 +1,14 @@
+{
+  "name": "oil-system/api-logistics",
+  "description": "API de Logística para Sistema de Petróleo",
+  "type": "project",
+  "require": {
+    "php": ">=7.4",
+    "php-amqplib/php-amqplib": "^3.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "OilSystem\\Logistics\\": "src/"
+    }
+  }
+}
