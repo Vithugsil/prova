@@ -1,12 +1,12 @@
 api sensores: \
 GET /sensor-data:  
 verifica se tem registro em cache, caso tenha, retorna o seu conteúdo \
-caso esteja vazio ele gera dados randomicos de temperatura, pressão e tempo. \
+caso o cache esteja vazio ele gera dados randômicos de temperatura, pressão e tempo. \
 adiciona esse novo registro ao redis e retorna o json do data. 
 
 POST /alert: \
-Obtem o body da requisição + o timestamp para cliar um json com essas infos. \
-apos isso pega a url da api de python  e utilizando o post do axios, faz uma requisição para ela com o json de AlertData. 
+Obtem o body da requisição + o timestamp para criar um json com essas infos. \
+apos isso pega a url da api de python e utilizando o post do axios, faz uma requisição para ela com o json de AlertData. 
 
 api de eventos: \
 POST /event : \
@@ -16,7 +16,8 @@ adiciona em chache redis \
 retorna a mensagem falando que o evento foi recebido 
 
 GET /events: \
-verifica se tem em cache os eventos, senão retorna a propria lista do python em forma de json 
+verifica se tem em cache os eventos, senão retorna a propria lista do python em forma de json \
+tambem consome a fila da api php
 
 Api de logistica: \
 GET /equipments: \
