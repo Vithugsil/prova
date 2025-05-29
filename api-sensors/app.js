@@ -60,5 +60,5 @@ app.post("/alert", async (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Sensors API listening at http://localhost:${port}`);
+  console.log(`Running on http://localhost:${port}`);
 });
