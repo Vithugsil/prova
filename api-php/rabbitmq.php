@@ -2,7 +2,8 @@
 use PhpAmqpLib\Connection\AMQPStreamConnection;
 use PhpAmqpLib\Message\AMQPMessage;
 
-function publishToQueue($host, $messageBody) {
+function publishToQueue($host, $messageBody)
+{
     $connection = new AMQPStreamConnection($host, 5672, 'guest', 'guest');
     $channel = $connection->channel();
 

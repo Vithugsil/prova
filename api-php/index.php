@@ -11,9 +11,11 @@ header('Content-Type: application/json');
 
 if ($method === 'GET' && $uri === '/equipments') {
     echo json_encode([
-        ["id" => 1, "name" => "Valve"],
-        ["id" => 2, "name" => "Pump"],
-        ["id" => 3, "name" => "Drill Head"]
+        ["id" => 1, "name" => "Excavator Arm"],
+        ["id" => 2, "name" => "Bulldozer Blade"],
+        ["id" => 3, "name" => "Crane Hook"],
+        ["id" => 4, "name" => "Forklift Forks"],
+        ["id" => 5, "name" => "Dump Truck Bed"],
     ]);
 } elseif ($method === 'POST' && $uri === '/dispatch') {
     $body = file_get_contents('php://input');

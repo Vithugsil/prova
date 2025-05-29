@@ -1,6 +1,6 @@
 {
   "name": "oil-system/api-logistics",
-  "description": "API de Logística para Sistema de Petróleo",
+  "description": "API de Logística",
   "type": "project",
   "require": {
     "php": ">=7.4",

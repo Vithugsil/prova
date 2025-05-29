@@ -19,19 +19,19 @@ services:
     volumes:
       - rabbitmq_data:/var/lib/rabbitmq
 
-  api-sensors:
-    build: ./api-sensors
+  api-node:
+    build: ./api-node
     ports:
       - "3000:3000"
     environment:
       - REDIS_HOST=redis
-      - PYTHON_API_URL=http://api-events:5000
+      - PYTHON_API_URL=http://api-python:5000
     depends_on:
       - redis
-      - api-events
+      - api-python
 
-  api-events:
-    build: ./api-events
+  api-python:
+    build: ./api-python
     ports:
       - "5000:5000"
     environment:
@@ -41,8 +41,8 @@ services:
       - redis
       - rabbitmq
 
-  api-logistics:
-    build: ./api-logistics
+  api-php:
+    build: ./api-php
     ports:
       - "8001:80"
     environment:
